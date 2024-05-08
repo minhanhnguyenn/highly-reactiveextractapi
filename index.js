@@ -1,1 +1,6 @@
-const dropRight = (arr, n = 1) => arr.slice(0, -n);
+function flattenArray(arr) {
+  return arr.reduce(
+    (acc, curr) => acc.concat(Array.isArray(curr) ? flattenArray(curr) : curr),
+    [],
+  );
+}
